@@ -1,5 +1,36 @@
-node_modules/
+```
+# Build results
+obj/
+bin/
+Debug/
+Release/
+
+# Dependencies
+packages/
+*.nupkg
+
+# User-specific files
+.vs/
+*.user
+*.userosscache
+*.suo
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+```node_modules/
 .next/
 dist/
 build/
-*.log
