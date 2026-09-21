@@ -1,18 +1,20 @@
-using System.Windows;
-using FormsApp = System.Windows.Forms.Application;
+using System;
+using System.IO;
+using WpfApp = System.Windows.Application;
+using WinFormsApp = System.Windows.Forms.Application;
+using WpfMessageBox = System.Windows.MessageBox;
 
 namespace ShutdownTimer;
 
 /// <summary>
 /// Interaction logic for App.xaml
 /// </summary>
-public partial class App : Application
+public partial class App : WpfApp
 {
     protected override void OnStartup(StartupEventArgs e)
     {
         base.OnStartup(e);
         
-        // Log application start
         var appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         var logDir = Path.Combine(appData, "ShutdownTimer", "logs");
         if (!Directory.Exists(logDir))
@@ -28,7 +30,6 @@ public partial class App : Application
 
     protected override void OnExit(ExitEventArgs e)
     {
-        // Log application exit
         var appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         var logDir = Path.Combine(appData, "ShutdownTimer", "logs");
         if (Directory.Exists(logDir))

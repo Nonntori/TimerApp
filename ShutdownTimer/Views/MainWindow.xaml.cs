@@ -1,3 +1,5 @@
+using System;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using ShutdownTimer.Models;
@@ -73,7 +75,7 @@ public partial class MainWindow : Window
         UpdateButtonText();
     }
 
-    protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+    protected override void OnClosing(CancelEventArgs e)
     {
         if (_viewModel.IsRunning && _settingsService.Settings.MinimizeToTray)
         {
